@@ -1,0 +1,18 @@
+<div class="oj-hybrid-padding">
+        <script type="text/html" id="navTemplate">
+            <li><a href="#">
+              <span data-bind="css: $data['iconClass']"></span>
+              <!-- ko text: $data['name'] --> <!--/ko-->
+            </a></li>
+          </script>
+          <div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar">
+                <oj-navigation-list class="oj-md-condense oj-md-justify-content-flex-start"
+                                    data="[[navDataSource]]"
+                                    edge="top"
+                                    item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('navTemplate', true)]]"
+                                    selection="{{buyerRouter.stateId}}" style="background-color: rgba(246, 248, 247, 0.432);">
+                </oj-navigation-list>
+              </div>
+    <div id="mainContainer" data-bind="ojModule: buyerRouter.moduleConfig"></div>
+</div>
+

@@ -52,7 +52,7 @@ requirejs.config(
  * by the modules themselves), we are listing them explicitly to get the references to the 'oj' and 'ko'
  * objects in the callback
  */
-require(['ojs/ojcore', 'knockout', 'appController', 'ojs/ojknockout', 'ojs/ojbutton', 'ojs/ojtoolbar', 'ojs/ojmenu'],
+require(['ojs/ojcore', 'knockout', 'appController', 'ojs/ojknockout', 'ojs/ojmodule', 'ojs/ojrouter', 'ojs/ojbutton', 'ojs/ojtoolbar', 'ojs/ojmenu'],
   function (oj, ko, app) { // this callback gets executed when all required modules are loaded
     
     $(function() {

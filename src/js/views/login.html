@@ -1,0 +1,46 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+-->
+<div class="oj-hybrid-padding">
+    <div class="oj-panel oj-md-odd-cols-4 oj-md-labels-inline oj-sm-odd-cols-12 logindiv login_class">
+        <div class="oj-flex">
+            <div class="oj-flex-item" id="loginId">
+                <div>
+                    <img src="../../css/images/oracle_cloud_image.jpg" style="height: 45%; width: 45%;">
+                </div>
+            </div>
+            <div class="oj-form-layout">
+                <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline">
+                    <div class="oj-flex">
+                        <div class="oj-flex-item">
+                            <oj-label show-required for="username" style="color: rgb(22, 21, 21);">Username</oj-label>
+                        </div>
+                        <div class="oj-flex-item">
+                            <oj-input-text id="username" name="username" value="{{username}}" required></oj-input-text>
+                        </div>
+                    </div>
+
+                    <div class="oj-flex">
+                        <div class="oj-flex-item">
+                            <oj-label show-required for="pwd" style="color: rgb(22, 21, 21);">Password</oj-label>
+                        </div>
+                        <div class="oj-flex-item">
+                            <oj-input-password id="pwd" name="pwd" value="{{password}}" required></oj-input-password>
+                        </div>
+                    </div>
+
+                    <div class="oj-flex-bar">
+                        <div class="oj-flex-bar-end">
+                            <br>
+                            <oj-button id="submit" class="oj-button-primary" on-click="[[login]]">Login</oj-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</div>
