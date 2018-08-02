@@ -33,7 +33,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojmodule', 'o
                 }
             ];
             self.navDataSource = new oj.ArrayTableDataSource(navData, { idAttribute: 'id' });
-
+            self.router.go('/user/dashboard');
             //self.router.go('/buyer/dashboard');
 
             self.handleActivated = function (info) {

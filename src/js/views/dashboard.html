@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<h1>Departments List</h1>
+        <div id='collectionContainer' class='department_class'> 
+            <oj-table id='table' aria-label='Departments Table'
+                      data='[[pagingDataSource]]'
+                      columns-default.sortable='disabled'
+                      columns='[[tableColumns]]'
+                      style='width: 75%; height: 200px;'>
+            </oj-table>
+            <oj-paging-control id="paging" data='[[pagingDataSource]]' page-size='2' slot='bottom'>
+            </oj-paging-control>
+
+        </div>
