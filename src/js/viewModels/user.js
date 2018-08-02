@@ -17,9 +17,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojmodule', 'o
 
             var self = this;
             self.router = oj.Router.rootInstance;
-            self.buyerRouter = self.router.createChildRouter('buyer').configure({
+            self.buyerRouter = self.router.createChildRouter('post').configure({
                 'dashboard': { label: 'My Dashboard', isDefault: true },
-                'buyproduct': { label: 'Buy Product' }
+                'createrequest': { label: 'Create Request' }
             });
 
             var navData = [
@@ -28,7 +28,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojmodule', 'o
                     iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-home-icon-24'
                 },
                 {
-                    name: 'Buy Product', id: 'buyproduct',
+                    name: 'Create Request', id: 'createrequest',
                     iconClass: 'oj-navigationlist-item-icon demo-icon-font-24 demo-catalog-icon-24'
                 }
             ];
