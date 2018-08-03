@@ -9,7 +9,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojinputtext', 
   function (oj, ko, $, app) {
 
     function AboutViewModel() {
-      debugger;
+
       var self = this;
       self.username = ko.observable();
       self.password = ko.observable();

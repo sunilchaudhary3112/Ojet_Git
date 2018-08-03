@@ -28,7 +28,17 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojknockout', 'ojs/ojrouter'],
       self.appName = ko.observable("Oracle Cloud APP");
       self.userType = ko.observable();
       // User Info used in Global Navigation area
-      self.userLogin = ko.observable("john.hancock@oracle.com");
+      //self.userLogin = ko.observable("john.hancock@oracle.com");
+
+      self.menuItemAction = function (event) {
+        if (event.target.value === 'out') {
+          self.user('');
+          self.userType('');
+          $('#header').hide();
+          self.router.go('login');
+        }
+
+      };
 
       // Footer
       function footerLink(name, id, linkTarget) {

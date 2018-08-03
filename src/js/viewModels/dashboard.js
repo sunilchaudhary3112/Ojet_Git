@@ -41,27 +41,27 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojknockout-model', 'ojs/ojtable', 'ojs/oj
     function CollectionContainerViewModel() {
         //Write View Model Content Here
 
-        var self = this;
-        var deptIdCol = {
-            "headerText": "Department Id", "field": "DepartmentId", "headerClassName":
-                "oj-sm-only-hide", "className": "oj-sm-only-hide"
-        };
-        var deptNameCol = { "headerText": "Department Name", "field": "DepartmentName" };
-        var deptLocationCol = {
-            "headerText": "Location Id", "field": "LocationId", "headerClassName":
-                "oj-sm-only-hide", "className": "oj-sm-only-hide"
-        };
-        var deptMgrCol = { "headerText": "Manager Id", "field": "ManagerId" };
-        self.tableColumns = [deptIdCol, deptNameCol, deptLocationCol, deptMgrCol];
+        // var self = this;
+        // var deptIdCol = {
+        //     "headerText": "Department Id", "field": "DepartmentId", "headerClassName":
+        //         "oj-sm-only-hide", "className": "oj-sm-only-hide"
+        // };
+        // var deptNameCol = { "headerText": "Department Name", "field": "DepartmentName" };
+        // var deptLocationCol = {
+        //     "headerText": "Location Id", "field": "LocationId", "headerClassName":
+        //         "oj-sm-only-hide", "className": "oj-sm-only-hide"
+        // };
+        // var deptMgrCol = { "headerText": "Manager Id", "field": "ManagerId" };
+        // self.tableColumns = [deptIdCol, deptNameCol, deptLocationCol, deptMgrCol];
 
-        var deptArray = [
-            { DepartmentId: 1001, DepartmentName: 'ADFPM 1001 neverending', LocationId: 200, ManagerId: 300 },
-            { DepartmentId: 556, DepartmentName: 'BB', LocationId: 200, ManagerId: 300 },
-            { DepartmentId: 10, DepartmentName: 'Administration', LocationId: 200, ManagerId: 300 }
-        ];
+        // var deptArray = [
+        //     { DepartmentId: 1001, DepartmentName: 'ADFPM 1001 neverending', LocationId: 200, ManagerId: 300 },
+        //     { DepartmentId: 556, DepartmentName: 'BB', LocationId: 200, ManagerId: 300 },
+        //     { DepartmentId: 10, DepartmentName: 'Administration', LocationId: 200, ManagerId: 300 }
+        // ];
 
-        var dataprovider = new oj.ArrayTableDataSource(deptArray, { idAttribute: 'DepartmentId' });
-        self.pagingDataSource = new oj.PagingTableDataSource(dataprovider);
+        // var dataprovider = new oj.ArrayTableDataSource(deptArray, { idAttribute: 'DepartmentId' });
+        // self.pagingDataSource = new oj.PagingTableDataSource(dataprovider);
 
 
 

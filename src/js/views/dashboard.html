@@ -4,7 +4,44 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<h1>Departments List</h1>
+
+<div class="row" id="dashboard">
+    <div class="oj-panel oj-margin col-sm-3 dash padding_dashborad">
+        <a href="#" data-bind="click: gotoMarketPlace">
+            <div class="row">
+                <img class="img1" src="../../css/images/icon_big_1.png" alt="marketplace image" width="100" height="100">
+            </div>
+            <br>
+            <div class="row">
+                Market Place
+            </div>
+        </a>
+    </div>
+    <div class="oj-panel oj-margin col-sm-3 dash padding_dashborad">
+        <a href="#" data-bind="click: gotoMyTransaction">
+            <div class="row">
+                <img class="img1" src="../../css/images/icon_big_2.png" alt="my transactions image" width="100" height="100">
+            </div>
+            <br>
+            <div class="row">
+                My Transactions
+            </div>
+        </a>
+    </div>
+    <div class="oj-panel oj-margin col-sm-3 dash padding_dashborad">
+        <a href="#" data-bind="click: gotoTrace">
+            <div class="row">
+                <img class="img1" src="../../css/images/icon_big_3.png" alt="track and trace image" width="100" height="100">
+            </div>
+            <br>
+            <div class="row">
+                Track and Trace
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- <h1>Departments List</h1>
         <div id='collectionContainer' class='department_class'> 
             <oj-table id='table' aria-label='Departments Table'
                       data='[[pagingDataSource]]'
@@ -15,4 +52,4 @@ and open the template in the editor.
             <oj-paging-control id="paging" data='[[pagingDataSource]]' page-size='2' slot='bottom'>
             </oj-paging-control>
 
-        </div>
+        </div> -->
