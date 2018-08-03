@@ -41,15 +41,18 @@ and open the template in the editor.
     </div>
 </div>
 
-<!-- <h1>Departments List</h1>
-        <div id='collectionContainer' class='department_class'> 
-            <oj-table id='table' aria-label='Departments Table'
-                      data='[[pagingDataSource]]'
-                      columns-default.sortable='disabled'
-                      columns='[[tableColumns]]'
-                      style='width: 75%; height: 200px;'>
-            </oj-table>
-            <oj-paging-control id="paging" data='[[pagingDataSource]]' page-size='2' slot='bottom'>
-            </oj-paging-control>
 
-        </div> -->
+<div class="demo-tab-content department_class" id="marketplace" style="display: none;">
+    <oj-button id='halfPush1' chroming='half' on-click="[[showDashboard]]">
+        <span slot='startIcon' class="oj-fwk-icon oj-fwk-icon-back"></span>
+        <b>Back</b>
+    </oj-button>
+    <div style="font-weight: bold; font-size: 18px; background-color: rgb(98, 111, 122);">
+        <span>Departments List</span>
+    </div>
+    <br>
+    <oj-table id='table' aria-label='Departments Table' data='[[dataprovider]]' columns-default.sortable='disabled' columns='[[tableColumns]]'
+        style='width: 75%; height: 200px;'>
+    </oj-table>
+
+</div>

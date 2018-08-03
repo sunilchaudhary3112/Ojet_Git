@@ -4,80 +4,69 @@
  * and open the template in the editor.
  */
 
-define(['ojs/ojcore', 'knockout', 'ojs/ojknockout-model', 'ojs/ojtable', 'ojs/ojarraytabledatasource', 'ojs/ojpagingcontrol', 'ojs/ojpagingtabledatasource', 'ojs/ojcollectiontabledatasource'], function (oj, ko) {
+define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', 'ojs/ojinputtext', 'ojs/ojbutton', 'ojs/ojtable', 'ojs/ojarraydataprovider',
+    'ojs/ojtimeline', 'ojs/ojpagingtabledatasource'],
+    function (oj, ko, $, app) {
 
-    // function DepartmentUIModel(deptId, deptName, locId, mgrId) {
-    //     this.DepartmentId = deptId;
-    //     this.DepartmentName = deptName;
-    //     this.LocationId = locId;
-    //     this.ManagerId = mgrId;
-    // }
+        function CollectionContainerViewModel() {
+            //Write View Model Content Here
 
-    // function DepartmentOjModelBuilder() {
-    //     var parseJsonToModel = function (jsonData) {
-    //         return new DepartmentUIModel(jsonData.department_id, jsonData.department_name, jsonData.location_id, jsonData.manager_id);
-    //     }
+            var self = this;
 
-    //     var DepartmentOjModel = oj.Model.extend({
-    //         parse: parseJsonToModel,
-    //         idAttribute: 'DepartmentId'
-    //     });
+            self.deptArray = ko.observableArray([]);
+            self.dataprovider = new oj.ArrayDataProvider(self.deptArray, { idAttribute: 'DepartmentId' });
 
-    //     return new DepartmentOjModel();
-    // }
+            self.gotoMarketPlace = function () {
+                $('#dashboard').hide();
+                $('#marketplace').show();
+                self.fetchList();
 
-    // function DepartmentOjCollectionBuilder(serviceURL) {
-    //     var departmentOjModelInstance = DepartmentOjModelBuilder();
-    //     var DepartmentOjCollection = oj.Collection.extend({
-    //         url: serviceURL,
-    //         model: departmentOjModelInstance,
-    //         comparator: "DepartmentId"
-    //     });
+            }
 
-    //     return new DepartmentOjCollection();
-    // }
+            self.gotoMyTransaction = function () { }
+            self.gotoTrace = function () { }
 
-
-    function CollectionContainerViewModel() {
-        //Write View Model Content Here
-
-        // var self = this;
-        // var deptIdCol = {
-        //     "headerText": "Department Id", "field": "DepartmentId", "headerClassName":
-        //         "oj-sm-only-hide", "className": "oj-sm-only-hide"
-        // };
-        // var deptNameCol = { "headerText": "Department Name", "field": "DepartmentName" };
-        // var deptLocationCol = {
-        //     "headerText": "Location Id", "field": "LocationId", "headerClassName":
-        //         "oj-sm-only-hide", "className": "oj-sm-only-hide"
-        // };
-        // var deptMgrCol = { "headerText": "Manager Id", "field": "ManagerId" };
-        // self.tableColumns = [deptIdCol, deptNameCol, deptLocationCol, deptMgrCol];
-
-        // var deptArray = [
-        //     { DepartmentId: 1001, DepartmentName: 'ADFPM 1001 neverending', LocationId: 200, ManagerId: 300 },
-        //     { DepartmentId: 556, DepartmentName: 'BB', LocationId: 200, ManagerId: 300 },
-        //     { DepartmentId: 10, DepartmentName: 'Administration', LocationId: 200, ManagerId: 300 }
-        // ];
-
-        // var dataprovider = new oj.ArrayTableDataSource(deptArray, { idAttribute: 'DepartmentId' });
-        // self.pagingDataSource = new oj.PagingTableDataSource(dataprovider);
+            var deptIdCol = {
+                "headerText": "Department Id", "field": "DepartmentId", "headerClassName":
+                    "oj-sm-only-hide", "className": "oj-sm-only-hide"
+            };
+            var deptNameCol = { "headerText": "Department Name", "field": "DepartmentName" };
+            var deptLocationCol = {
+                "headerText": "Location Id", "field": "LocationId", "headerClassName":
+                    "oj-sm-only-hide", "className": "oj-sm-only-hide"
+            };
+            var deptMgrCol = { "headerText": "Manager Id", "field": "ManagerId" };
+            self.tableColumns = [deptIdCol, deptNameCol, deptLocationCol, deptMgrCol];
 
 
+            self.fetchList = function () {
+                debugger
 
-        // var deptOjCollectionInstance = DepartmentOjCollectionBuilder('http://10.184.61.31:9090/ords/hr/departments');
-        // deptOjCollectionInstance.fetch({
-        //     success: function (collection, response, options) {
-        //         console.log('Successful')
-        //     },
-        //     error: function (jqXHR, textStatus, errorThrown) {
-        //         console.log('Failure');
-        //     }
-        // });
+                self.deptArray([]);
+                self.deptArray.push({ DepartmentId: 1001, DepartmentName: 'ADFPM 1001 neverending', LocationId: 200, ManagerId: 300 })
+                self.deptArray.push({ DepartmentId: 556, DepartmentName: 'BB', LocationId: 200, ManagerId: 300 })
+                self.deptArray.push({ DepartmentId: 10, DepartmentName: 'Administration', LocationId: 200, ManagerId: 300 });
 
-        // var collectionTableDataSource = new oj.CollectionTableDataSource(deptOjCollectionInstance);
-        // self.pagingDataSource = new oj.PagingTableDataSource(collectionTableDataSource);
+            }
 
-    }
-    return new CollectionContainerViewModel();
-});
+
+            self.showDashboard = function () {
+                if (self.previous === 'marketplace') {
+                    self.previous = null;
+                    $('#marketplace').show();
+                }
+                else if (self.previous === 'mytransactions') {
+                    self.previous = null;
+                    $('#mytransactions').show();
+                }
+                else {
+                    $('#dashboard').show();
+                    $('#marketplace').hide();
+                    $('#mytransactions').hide();
+                }
+                $('#trace').hide();
+            }
+
+        }
+        return new CollectionContainerViewModel();
+    });
