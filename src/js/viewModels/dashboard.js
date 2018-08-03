@@ -12,6 +12,11 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
             //Write View Model Content Here
 
             var self = this;
+            //self.showbuy = ko.observable(false);
+
+            // if(app.userType() === 'user') {
+            //     self.showbuy(true);
+            // }
 
             self.deptArray = ko.observableArray([]);
             self.dataprovider = new oj.ArrayDataProvider(self.deptArray, { idAttribute: 'DepartmentId' });
@@ -23,7 +28,11 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
 
             }
 
-            self.gotoMyTransaction = function () { }
+            self.gotoMyTransaction = function () {
+                $('#dashboard').hide();
+                $('#mytransactions').show();
+                self.fetchList();
+             }
             self.gotoTrace = function () { }
 
             var deptIdCol = {
@@ -49,6 +58,9 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
 
             }
 
+            self.myActionFunction = function (event) { }
+            self.myBeforeOpenFunction = function (event) { }
+
 
             self.showDashboard = function () {
                 if (self.previous === 'marketplace') {
@@ -66,6 +78,34 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
                 }
                 $('#trace').hide();
             }
+
+
+            //Code for making ajax call for external web service
+            // self.fetchall = function () {
+            //     var querydata = { "channel": "dpwchannel", "chaincode": "dpwasset", "method": "queryAllConsignment", "args": [""], "chaincodeVer": "v4" };
+            //     self.myTuna([]);
+            //     $.ajax({
+            //         type: "POST",
+            //         url: '/query',
+            //         data: JSON.stringify(querydata),
+            //         cache: false,
+            //         contentType: 'application/json; charset=utf-8'
+            //     }).done(function (result) {
+            //         console.log(result);
+            //         var parsedRes = JSON.parse(result.replace("/", ""));
+            //         if (parsedRes.result != null) {
+            //             recordArray = JSON.parse(parsedRes.result);
+            //             $.each(recordArray, function (index) {
+            //                 if(recordArray[index]['Record']['holder'] === app.user()) {
+            //                     recordArray[index]['Record']['key'] = recordArray[index]['Key'];
+            //                     self.myTuna.push(recordArray[index]['Record']);
+            //                 }
+            //             });
+            //         }
+            //     }).fail(function (jqXHR, textStatus) {
+            //         console.log(textStatus);
+            //     });
+            // }
 
         }
         return new CollectionContainerViewModel();

@@ -41,7 +41,7 @@ and open the template in the editor.
     </div>
 </div>
 
-
+<!--  Div section for marketplace -->
 <div class="demo-tab-content department_class" id="marketplace" style="display: none;">
     <oj-button id='halfPush1' chroming='half' on-click="[[showDashboard]]">
         <span slot='startIcon' class="oj-fwk-icon oj-fwk-icon-back"></span>
@@ -53,6 +53,35 @@ and open the template in the editor.
     <br>
     <oj-table id='table' aria-label='Departments Table' data='[[dataprovider]]' columns-default.sortable='disabled' columns='[[tableColumns]]'
         style='width: 75%; height: 200px;'>
+        <!-- Code to add menu on right click on any row -->
+        <!-- <oj-menu slot="contextMenu" on-oj-action="[[myActionFunction]]" on-oj-before-open="[[myBeforeOpenFunction]]" style="display:none"
+            aria-label="Get Product History">
+            <oj-option value="gethistory">Get History</oj-option>
+            <!-- ko if: showbuy-->
+        <oj-option value="buyproduct">Buy Product</oj-option>
+        <!-- /ko -->
+        <oj-option data-oj-command="oj-table-sortAsc"></oj-option>
+        <oj-option data-oj-command="oj-table-sortDsc"></oj-option>
+        </oj-menu> -->
+
     </oj-table>
 
 </div>
+<!--  End Div section for marketplace -->
+
+
+<!--  Div section for Transaction -->
+<div class="demo-tab-content department_class" id="mytransactions" style="display: none;">
+    <oj-button id='halfPush1' chroming='half' on-click="[[showDashboard]]">
+        <span slot='startIcon' class="oj-fwk-icon oj-fwk-icon-back"></span>
+        Back
+    </oj-button>
+    <div style="font-weight: bold; font-size: 18px; background-color: rgb(187, 219, 247);">
+        <span>My Transactions</span>
+    </div>
+    <br>
+    <oj-table id="table3" aria-label="Product Table" data='[[dataprovider]]' 
+        columns='{{tableColumns}}' style='width: 100%; height:100%;'>
+    </oj-table>
+</div>
+<!--  End Div section for marketplace -->
