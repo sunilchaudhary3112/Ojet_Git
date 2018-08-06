@@ -93,7 +93,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
                 var arr = [{ DepartmentId: 1001, DepartmentName: 'ADFPM 1001 neverending', LocationId: 200, ManagerId: 300 },
                 { DepartmentId: 556, DepartmentName: 'BB', LocationId: 200, ManagerId: 300 },
                 { DepartmentId: 10, DepartmentName: 'Administration', LocationId: 200, ManagerId: 300 }];
-
+                self.selectedDept([]);
                 arr.forEach(dept => {
                     if (dept.DepartmentId == parseInt(self.key._latestValue)) {
                         self.selectedDept.push(dept);

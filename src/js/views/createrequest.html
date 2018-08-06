@@ -1,0 +1,70 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<div class="oj-hybrid-padding department_class">
+
+
+    <div class="demo-tab-content">
+        <div class="oj-form oj-md-odd-cols-4 oj-md-labels-inline oj-sm-odd-cols-12" id="recordtuna">
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <oj-label show-required for="dept_name">Department Name</oj-label>
+                </div>
+                <div class="oj-flex-item">
+                    <oj-input-text id="dept_name" value="{{dept_name}}" required></oj-input-text>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <oj-label show-required for="dept_type">Department Type</oj-label>
+                </div>
+                <div class="oj-flex-item">
+                    <oj-input-text id="dept_type" value="{{dept_type}}" required></oj-input-text>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <oj-label show-required for="location">Location</oj-label>
+                </div>
+                <div class="oj-flex-item">
+                    <oj-input-text id="location" value="{{dept_location}}" required></oj-input-text>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <oj-label show-required for="timestamp">Datetime</oj-label>
+                </div>
+                <div class="oj-flex-item">
+                    <oj-input-date-time id="timestamp" size="30" value="{{date_time}}" required></oj-input-date-time>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <oj-label show-required for="manager_name">Manager Name</oj-label>
+                </div>
+                <div class="oj-flex-item">
+                    <oj-input-text id="manager_name" value="{{manager_name}}" required></oj-input-text>
+                </div>
+            </div>
+            <div class="oj-flex">
+                <div class="oj-flex-item">
+                    <oj-label show-required for="manager_id">Manager Id</oj-label>
+                </div>
+                <div class="oj-flex-item">
+                    <oj-input-text id="manager_id" value="{{manager_id}}" required></oj-input-text>
+                </div>
+            </div>
+            
+            <oj-button id="add" class="oj-button-primary" on-click="[[createDept]]">Create Department</oj-button>
+            <div id="banner1" style="display: none;">
+                Department added successfully. Department ID :
+                <span data-bind="text: dept_id"></span>
+            </div>
+                         
+        </div>
+    </div>
+</div>
+

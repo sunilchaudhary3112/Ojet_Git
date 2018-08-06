@@ -13,7 +13,7 @@ and open the template in the editor.
             </div>
             <br>
             <div class="row">
-                Market Place
+                Department List
             </div>
         </a>
     </div>
@@ -35,13 +35,13 @@ and open the template in the editor.
             </div>
             <br>
             <div class="row">
-                Track and Trace
+                Get Department By Id
             </div>
         </a>
     </div>
 </div>
 
-<!--  Div section for marketplace -->
+<!--  Div section for Departments List -->
 <div class="demo-tab-content department_class" id="marketplace" style="display: none;">
     <oj-button id='halfPush1' chroming='half' on-click="[[showDashboard]]">
         <span slot='startIcon' class="oj-fwk-icon oj-fwk-icon-back"></span>
@@ -67,7 +67,7 @@ and open the template in the editor.
     </oj-table>
 
 </div>
-<!--  End Div section for marketplace -->
+<!--  End Div section for Departments List -->
 
 
 <!--  Div section for Transaction -->
@@ -83,10 +83,10 @@ and open the template in the editor.
     <oj-table id="table3" aria-label="Product Table" data='[[dataprovider]]' columns='{{tableColumns}}' style='width: 100%; height:100%;'>
     </oj-table>
 </div>
-<!--  End Div section for marketplace -->
+<!--  End Div section for Transaction -->
 
 
-<!--  Div section for Track and Trace -->
+<!--  Div section for Department List By ID -->
 <div class="demo-tab-content" id="trace" style="display: none;">
     <oj-button id='halfPush1' chroming='half' on-click="[[showDashboard]]">
         <span slot='startIcon' class="oj-fwk-icon oj-fwk-icon-back"></span>
@@ -111,10 +111,11 @@ and open the template in the editor.
                 </a>
             </div>
         </div>
-        
+
         <br>
-        <oj-table class="department_class" id="table4" aria-label="Department By Id" data='[[selectedDataProvider]]' columns='{{tableColumns}}' style="display: none; width: 100%; height:100%;">
+        <oj-table class="department_class" id="table4" aria-label="Department By Id" data='[[selectedDataProvider]]' columns='{{tableColumns}}'
+            style="display: none; width: 100%; height:100%;">
         </oj-table>
     </div>
 </div>
-<!--  End Div section for Track and Trace -->
+<!--  End Div section for Department List By ID -->
