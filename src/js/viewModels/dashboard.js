@@ -12,6 +12,11 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
             //Write View Model Content Here
 
             var self = this;
+            self.key = ko.observable();
+            self.items = ko.observableArray();
+            self.records = ko.observableArray([]);
+            self.selectedDept = ko.observableArray([]);
+            self.selectedDataProvider = new oj.ArrayDataProvider(self.selectedDept, { idAttribute: 'DepartmentId' });
             //self.showbuy = ko.observable(false);
 
             // if(app.userType() === 'user') {
@@ -32,8 +37,14 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
                 $('#dashboard').hide();
                 $('#mytransactions').show();
                 self.fetchList();
-             }
-            self.gotoTrace = function () { }
+            }
+            self.gotoTrace = function () {
+                self.key('');
+                self.items([]);
+                self.records([]);
+                $('#dashboard').hide();
+                $('#trace').show();
+            }
 
             var deptIdCol = {
                 "headerText": "Department Id", "field": "DepartmentId", "headerClassName":
@@ -49,8 +60,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
 
 
             self.fetchList = function () {
-                debugger
-
                 self.deptArray([]);
                 self.deptArray.push({ DepartmentId: 1001, DepartmentName: 'ADFPM 1001 neverending', LocationId: 200, ManagerId: 300 })
                 self.deptArray.push({ DepartmentId: 556, DepartmentName: 'BB', LocationId: 200, ManagerId: 300 })
@@ -60,7 +69,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
 
             self.myActionFunction = function (event) { }
             self.myBeforeOpenFunction = function (event) { }
-
 
             self.showDashboard = function () {
                 if (self.previous === 'marketplace') {
@@ -77,6 +85,24 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'appController', 'ojs/ojknockout', '
                     $('#mytransactions').hide();
                 }
                 $('#trace').hide();
+            }
+
+            self.getDeptById = function () {
+                console.log(self.key._latestValue);
+                //Let this result is coming from a api
+                var arr = [{ DepartmentId: 1001, DepartmentName: 'ADFPM 1001 neverending', LocationId: 200, ManagerId: 300 },
+                { DepartmentId: 556, DepartmentName: 'BB', LocationId: 200, ManagerId: 300 },
+                { DepartmentId: 10, DepartmentName: 'Administration', LocationId: 200, ManagerId: 300 }];
+
+                arr.forEach(dept => {
+                    if (dept.DepartmentId == parseInt(self.key._latestValue)) {
+                        self.selectedDept.push(dept);
+                    }
+
+                });
+
+                console.log(self.selectedDept._latestValue);
+                $('#table4').show();
             }
 
 
